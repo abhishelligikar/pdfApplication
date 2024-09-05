@@ -3,14 +3,18 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PdfModule } from './pdf/pdf.module';
+import { PdfoverviewComponent } from './pdf/pdfoverview/pdfoverview.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PdfoverviewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PdfModule
   ],
   providers: [
     provideClientHydration()
