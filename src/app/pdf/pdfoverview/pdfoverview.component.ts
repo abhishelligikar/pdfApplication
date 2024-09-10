@@ -8,7 +8,12 @@ import { PdfService } from '../../services/pdf.service';
 })
 export class PdfoverviewComponent implements OnInit {
 
-  pdf: any;
+  formValues: any = {
+    name: '',
+    email: '',
+    phone: '',
+    templateChoosen: ''
+  };
 
   constructor(private pdfService: PdfService) {}
 
@@ -16,19 +21,8 @@ export class PdfoverviewComponent implements OnInit {
     // this.generatePDF();
   }
 
-  generatePDF(): void {
-    let htmlContent = document.getElementById('pdfView');
-    this.pdfService.createPDF(htmlContent ? htmlContent.innerHTML : '');
-    // this.pdfService.createPDF(this.htmlContent);
-    this.pdf = this.pdfService.getPDF();
+  onChange(event: any): void {
+    this.formValues[event.target.name] = event.target.value;
   }
 
-  downloadPDF(): void {
-    const pdf = this.pdf;
-    const blob = new Blob([pdf.output('blob')], { type: 'application/pdf' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'report.pdf';
-    link.click();
-  }
 }

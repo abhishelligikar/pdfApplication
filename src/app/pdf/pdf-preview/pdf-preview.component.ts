@@ -46,4 +46,14 @@ export class PdfPreviewComponent implements OnInit {
       console.log(this.formValues.templateChoosen + ' dialog was closed');
     });
   }
+
+  generatePdf() {
+
+  }
+
+  downloadPdf() {
+    
+  }
+
+  
 }

@@ -9,6 +9,16 @@ export class PdfService {
 
   private pdf: any;
 
+  formData: any;
+
+  setData(data: any): void {
+    this.formData = data;
+  }
+
+  getData(): any {
+    return this.formData;
+  }
+
   constructor() { }
 
   createPDF(htmlContent: string): void {    
