@@ -1,46 +1,57 @@
 .container {
-    width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  .header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-  }
-  .header h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  .report {
-    padding: 20px;
-  }
-  .report h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  th {
-    background-color: #f0f0f0;
-  }
-  .footer {
-    background-color: #f0f0f0;
-    padding: 10px;
-    text-align: right;
-  }
-  .footer span {
-    font-weight: bold;
-  }
-  
+  width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+.header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.report {
+  padding: 20px;
+}
+.report h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background-color: #f0f0f0;
+}
+.footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+  text-align: right;
+}
+.footer span {
+  font-weight: bold;
+}
+
+.closebutton{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.pdfButtons {
+  position:absolute;
+  top: 10px;
+  left: 10px;
+}

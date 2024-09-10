@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfService } from '../../services/pdf.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pdfoverview',
@@ -8,12 +9,23 @@ import { PdfService } from '../../services/pdf.service';
 })
 export class PdfoverviewComponent implements OnInit {
 
+  pdfForm = new FormGroup({
+    name: new FormControl("", []),
+    placeholder1: new FormControl("", []),
+    placeholder2: new FormControl("", []),
+    templateChoosen: new FormControl("", [])
+  });
+
   formValues: any = {
     name: '',
-    email: '',
-    phone: '',
+    placeholder1: '',
+    placeholder2: '',
     templateChoosen: ''
   };
+
+  lstTemplates = ['template1', 'template2'];
+  template: any;
+
 
   constructor(private pdfService: PdfService) {}
 
@@ -21,8 +33,9 @@ export class PdfoverviewComponent implements OnInit {
     // this.generatePDF();
   }
 
-  onChange(event: any): void {
-    this.formValues[event.target.name] = event.target.value;
+  onSubmit() {
+    this.formValues = this.pdfForm.value;
+    console.log(this.formValues);
   }
 
 }

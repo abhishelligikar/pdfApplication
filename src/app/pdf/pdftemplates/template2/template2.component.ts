@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfService } from '../../../services/pdf.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-template2',
@@ -9,7 +10,9 @@ import { PdfService } from '../../../services/pdf.service';
 export class Template2Component implements OnInit {
   pdf: any;
 
-  constructor(private pdfService: PdfService) {}
+  constructor(private pdfService: PdfService,
+    public dialogRef: MatDialogRef<Template2Component>
+  ) {}
 
   ngOnInit() {
     // this.generatePDF();
@@ -29,6 +32,10 @@ export class Template2Component implements OnInit {
     link.href = URL.createObjectURL(blob);
     link.download = 'report.pdf';
     link.click();
+  }
+
+  onCancel() {
+    this.dialogRef.close();
   }
 
 }

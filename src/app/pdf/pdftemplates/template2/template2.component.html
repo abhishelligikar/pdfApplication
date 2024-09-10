@@ -1,35 +1,56 @@
-<div class="container" id="pdfView">
-  <div class="header">
-    <h1>Template 2</h1>
-    <p>Address: <span>123 Main St</span></p>
-    <p>City, State ZIP: <span>Anytown, CA 12345</span></p>
+
+
+<div mat-dialog-content>
+  <div>
+    <div class="closebutton">
+      <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
+    </div>
+    <div class="pdfButtons">
+      <button class="btn btn-primary" (click)="generatePDF()">Generate PDF</button>
+      <button class="btn btn-primary" (click)="downloadPDF()">Download PDF</button>
+    </div>
   </div>
-  <div class="report">
-    <h2>Report Title</h2>
-    <p>Report Date: <span>2022-01-01</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Column 1</th>
-          <th>Column 2</th>
-          <th>Column 3</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Data 1</td>
-          <td>Data 2</td>
-          <td>Data 3</td>
-        </tr>
-        <tr>
-          <td>Data 4</td>
-          <td>Data 5</td>
-          <td>Data 6</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="container" id="pdfView">
+    <div class="header">
+      <h1>Template 2</h1>
+      <p>Address: <span>123 Main St</span></p>
+      <p>City, State ZIP: <span>Anytown, CA 12345</span></p>
+    </div>
+    <div class="report">
+      <h2>Report Title</h2>
+      <p>Report Date: <span>2022-01-01</span></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+          </tr>
+          <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="footer">
+      <p>Page <span>1</span> of <span>1</span></p>
+    </div>
   </div>
-  <div class="footer">
-    <p>Page <span>1</span> of <span>1</span></p>
+  <div id="chart">
+    <app-pdf-chart></app-pdf-chart>
   </div>
 </div>
+
+
+
+
+

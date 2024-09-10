@@ -28,6 +28,7 @@ export class PdfService {
     // Convert HTML content to image using jspdf-autotable
     const element = document.getElementById('pdfView') as HTMLElement;
     html2canvas(element).then((canvas) => {
+      canvas.width = element.clientWidth;
       const imgData = canvas.toDataURL('image/jpeg');
       this.pdf.addImage(imgData, 'JPEG', 10, 20, 150, 200);
     });

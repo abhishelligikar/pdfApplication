@@ -4,7 +4,7 @@
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: .12rem;
-  width: 50rem;
+  width: 37rem;
 }
 
 .form-control {
@@ -46,4 +46,14 @@
 .row {
   display: -webkit-flex;
   display: flex;
+}
+
+.column {
+  margin-right: 61px;
+}
+
+.selectTemplate {
+  appearance: auto;
+  width: 248px;
+  height: 38px;
 }
