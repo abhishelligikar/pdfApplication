@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { PdfService } from '../../../services/pdf.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-template1',
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Template1Component implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  pdf: any;
+  pdfValues = {
+    name: '',
+    placeholder1: '',
+    placeholder2: ''
   }
 
+  constructor(private pdfService: PdfService,
+    public dialogRef: MatDialogRef<Template1Component>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
+
+  ngOnInit() {
+    if (this.data) {
+      this.pdfValues = this.data;
+    }
+  }
+
+  generatePDF(): void {
+    // let htmlContent = document.getElementById('pdfView');
+    this.pdfService.createPDF();
+    // this.pdfService.createPDF(this.htmlContent);
+    this.pdf = this.pdfService.getPDF();
+  }
+
+  downloadPDF(): void {
+    const pdf = this.pdf;
+    const blob = new Blob([pdf.output('blob')], { type: 'application/pdf' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'report.pdf';
+    link.click();
+  }
+
+  onCancel() {
+    this.dialogRef.close();
+  }
 }

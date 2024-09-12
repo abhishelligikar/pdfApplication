@@ -1,0 +1,174 @@
+/* .container {
+    width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .report {
+    padding: 20px;
+  }
+  .report h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #f0f0f0;
+  }
+  .footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: right;
+  }
+  .footer span {
+    font-weight: bold;
+  }*/
+
+  .closebutton{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .pdfButtons {
+    position:absolute;
+    top: 10px;
+    left: 10px;
+  }
+   
+/* @import "../../../styles/scss/variables"; */
+@use '@angular/material' as mat;
+
+
+.lra-table {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start of the container */
+    height: 100vh; /* Full viewport height */
+    margin-top: 2em; /* Adjust this value to set the desired space from the top */
+  }
+  
+  ag-grid-angular {
+    width: 100%;
+    max-width: 123em;
+  }
+.ag-theme-alpine {
+  --ag-header-foreground-color: #fff; /* White text for contrast */
+  --ag-header-background-color: #0099da /* Darker background color */
+}
+.pagination-controls {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .pagination-controls button {
+    margin: 0 5px;
+  }
+  .lra-table-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .outer-border {
+    border: 1px solid black;
+    margin-top: 20px;
+  }
+
+  .kn-logo {
+    height: 67px;
+    margin-left: 1em;
+    margin-right: 1.6em;
+    margin-top: 3em;
+  }
+  .flex-container {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Make space between the text and image */
+  }
+  
+  .text-container {
+    order: 1; /* Ensure the text is on the left */
+    margin-right: 38em;
+  }
+  
+  .logo-container {
+    order: 2; /* Ensure the logo is on the right */
+    margin-left: 20px; /* Optional: Add some spacing between the text and image */
+  }
+  
+  .kn-logo {
+    max-width: 100px; /* Adjust the size of the image as needed */
+    height: auto;
+  }
+  .flex-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mat-divider {
+    height: 100px; /* Set this height to match your layout */
+    margin: 0 10px; /* Optional: Add some spacing */
+  }
+  .divider-styling {
+    border-color: black !important;
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .tables-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adds spacing between the Business Profile and the tables */
+  }
+  
+  .table-left, .table-right {
+    width: 48%; /* Set each table width to take half of the space */
+  }
+  
+  table {
+    width: 100%; /* Make the table take full width of the container */
+    border-collapse: collapse;
+  }
+  
+  table, th, td {
+    border: 1px solid black; /* Add border to table cells */
+    padding: 8px; /* Add padding to table cells */
+    text-align: left;
+  }
+  
+  .divider-styling {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  /* .edit{
+    margin-top: 10em;
+    margin-left: 14em;
+  } */
+
+  /* #chart {
+    margin-top: 155px;
+  } */

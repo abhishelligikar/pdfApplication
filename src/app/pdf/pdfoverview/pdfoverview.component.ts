@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PdfService } from '../../services/pdf.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-pdfoverview',
@@ -8,7 +9,23 @@ import { PdfService } from '../../services/pdf.service';
 })
 export class PdfoverviewComponent implements OnInit {
 
-  pdf: any;
+  pdfForm = new FormGroup({
+    name: new FormControl("", []),
+    placeholder1: new FormControl("", []),
+    placeholder2: new FormControl("", []),
+    templateChoosen: new FormControl("", [])
+  });
+
+  formValues: any = {
+    name: '',
+    placeholder1: '',
+    placeholder2: '',
+    templateChoosen: ''
+  };
+
+  lstTemplates = ['template1', 'template2'];
+  template: any;
+
 
   constructor(private pdfService: PdfService) {}
 
@@ -16,19 +33,9 @@ export class PdfoverviewComponent implements OnInit {
     // this.generatePDF();
   }
 
-  generatePDF(): void {
-    let htmlContent = document.getElementById('pdfView');
-    this.pdfService.createPDF(htmlContent ? htmlContent.innerHTML : '');
-    // this.pdfService.createPDF(this.htmlContent);
-    this.pdf = this.pdfService.getPDF();
+  onSubmit() {
+    this.formValues = this.pdfForm.value;
+    console.log(this.formValues);
   }
 
-  downloadPDF(): void {
-    const pdf = this.pdf;
-    const blob = new Blob([pdf.output('blob')], { type: 'application/pdf' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'report.pdf';
-    link.click();
-  }
 }
