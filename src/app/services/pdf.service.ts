@@ -250,9 +250,9 @@ export class PdfService {
         //   }
 
         // }
-        // if (typeof this.pdf.putTotalPages === 'function') {
-        //   this.pdf.putTotalPages(this.totalPagesExp);
-        // }
+        if (typeof this.pdf.putTotalPages === 'function') {
+          this.pdf.putTotalPages(this.totalPagesExp);
+        }
         // if (exportElementMap.get('temperatureDeviationHelpPage')) {
         //   this.pdf.addPage();
         //   await this.createPageForTempDeviationHelpPage(
@@ -376,9 +376,9 @@ export class PdfService {
         undefined,
         'FAST'
       );
-      // this.addPageHeader('POC - Howdenre - PDF Generation');
-      // this.addSubtitle('PDF Sample View');
-      // this.addPageFooter();
+      this.addPageHeader('POC - Howdenre - PDF Generation');
+      this.addSubtitle('PDF Sample View');
+      this.addPageFooter();
       return 0;
     } catch (error) {
       throw new Error('Error capturing screenshot: ' + error);
@@ -405,9 +405,9 @@ export class PdfService {
         undefined,
         'FAST'
       );
-      // this.addPageHeader('POC - Howdenre - PDF Generation');
-      // this.addSubtitle('Static Charts');
-      // this.addPageFooter();
+      this.addPageHeader('POC - Howdenre - PDF Generation');
+      this.addSubtitle('Static Charts');
+      this.addPageFooter();
       return 0;
     } catch (error) {
       throw new Error('Error capturing screenshot: ' + error);
@@ -416,7 +416,8 @@ export class PdfService {
 
   private addPageFooter() {
     // footer
-    this.pdf.setFontStyle('normal');
+    // this.pdf.setFontStyle('normal');
+    this.pdf.setFont('times','normal');
     this.pdf.setFontSize(4);
     this.pdf.setTextColor('#000000');
     const pageSize = this.pdf.internal.pageSize;
@@ -428,8 +429,9 @@ export class PdfService {
       pageHeight - 20
     );
    
-    this.pdf.setFontStyle('bold');
-    this.pdf.setFontSize(4);
+    // this.pdf.setFontStyle('bold');
+    this.pdf.setFont('times','bold');
+    this.pdf.setFontSize(6);
     this.pdf.setTextColor('#000000');
     this.pdf.text(
         ' Page ' + this.pageNumberForPdf + ' of ' + this.totalPagesExp,
@@ -447,23 +449,26 @@ export class PdfService {
   }
 
   private addPageHeader(title: string) {
-    this.pdf.setFontStyle('bold');
+    //this.pdf.setFontStyle('bold');
+    this.pdf.setFont('times','bold');
     this.pdf.setFontSize(12);
     this.pdf.setTextColor('#003369');
     this.pdf.text(title, 57, 35);
-    this.pdf.addImage(
-      '../../assets/howden-new_0.png',
-      'PNG',
-      438.3,
-      22,
-      100,
-      20
-    );
-    this.pdf.setFontStyle('normal');
+    // this.pdf.addImage(
+    //   this.loadImage('../../assets/howden-new_0.png'),
+    //   'PNG',
+    //   438.3,
+    //   22,
+    //   100,
+    //   20
+    // );
+    // this.pdf.setFontStyle('normal');
+    this.pdf.setFont('times','normal');
   }
 
   private addSubtitle(title: string) {
-    this.pdf.setFontStyle('bold');
+    //this.pdf.setFontStyle('bold');
+    this.pdf.setFont('times','bold');
     this.pdf.setFontSize(9);
     this.pdf.setTextColor('#003369');
     this.pdf.text(title, 57, 45);
@@ -503,10 +508,10 @@ export class PdfService {
     return img;
   }
 
-  private async loadImage(url: any) {
+  private loadImage(url: any) {
     const img = new Image();
     img.src = url;
-    await img.decode();
+    img.decode();
     return img;
   }
 
