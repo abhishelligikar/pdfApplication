@@ -1,53 +1,221 @@
-
-
 <div mat-dialog-content>
   <div>
     <div class="closebutton">
       <button class="btn btn-primary" (click)="onCancel()">Cancel</button>
     </div>
     <div class="pdfButtons">
-      <button class="btn btn-primary" (click)="generatePDF()">Generate PDF</button>
-      <button class="btn btn-primary" (click)="downloadPDF()">Download PDF</button>
+      <button class="btn btn-primary" (click)="generatePDF()">
+        Download PDF
+      </button>
+      <!-- <button class="btn btn-primary" (click)="downloadPDF()">
+        Download PDF
+      </button> -->
     </div>
   </div>
-  <div class="container" id="pdfView">
-    <div class="header">
-      <h1>Template 1</h1>
-      <p>Address: <span>123 Main St</span></p>
-      <p>City, State ZIP: <span>Anytown, CA 12345</span></p>
-    </div>
-    <div class="report">
-      <h2>Report Title</h2>
-      <p>Report Date: <span>2022-01-01</span></p>
-      <table>
-        <thead>
-          <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
+  <div #pdfView class="container" id="pdfView">
+    <!-- <div class="lra-table-controls">
+  <button mat-icon-button color="primary" color="primary" (click)="onResetFilters()">Reset Filters</button>
+</div>
+
+<div class="lra-table">
+  <ag-grid-angular 
+    [gridOptions]="gridOptions" 
+    #agGrid
+    style="min-width:98%"
+    class="ag-theme-alpine"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    [frameworkComponents]="frameworkComponents"
+    [pagination]="true"
+    [paginationPageSize]="15" 
+    [domLayout]="'autoHeight'">
+  </ag-grid-angular>
+</div> -->
+
+    <div class="lra-table">
+      <div class="outer-border">
+        <div class="flex-container">
+          <div class="text-container">
+            <div style="font-size: 150%; color: blue">
+              <span>Market Profile</span>
+            </div>
+            <div style="font-size: 100%">
+              <span>Sample Template 1</span>
+            </div>
+            <div style="font-size: 100%">
+              <span>{{pdfValues.name}}</span>
+            </div>
+            <div style="font-weight: bold">
+              <span>Address:</span>
+            </div>
+            <div style="font-weight: bold">
+              <span>Group Name: {{pdfValues.name}} group Ltd</span>
+            </div>
+          </div>
+          <div class="logo-container">
+            <img
+              class="kn-logo"
+              [src]="
+                '../../../../assets/howden-new_0.png'
+              "
+            />
+            <div style="font-weight: bold">
+              <span>LORS No.: h1614</span>
+            </div>
+            <div style="font-weight: bold">
+              <span>IPO Date: 13-Sep-1995</span>
+            </div>
+            <div style="font-weight: bold">
+              <span>Exchange: NASDAQ NMS - GLOBAL MARKET</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal mat-divider -->
+        <!-- <mat-divider class="divider-styling"></mat-divider> -->
+        <br />
+
+        <!-- Business Profile Section -->
+        <div>
+          <span>Business Profile</span>
+          <div>
+            {{pdfValues.placeholder1}}
+          </div>
+        </div>
+        <!-- <mat-divider class="divider-styling"></mat-divider> -->
+
+        <br>
+
+        <!-- Two tables below Business Profile -->
+        <div class="tables-container">
+          <!-- Left Table -->
+          <div class="table-left">
+            <div style="background-color: deepskyblue">Ratings</div>
+            <table>
+              <tr style="background-color: darkslategray; color: wheat">
+                <th>Source</th>
+                <th>Range</th>
+                <th>rating</th>
+                <th>Outlook</th>
+                <th>date</th>
+              </tr>
+              <tr>
+                <td>S&P</td>
+                <td>353</td>
+                <td>A+</td>
+                <td>Stable</td>
+                <td>####</td>
+              </tr>
+              <tr>
+                <td>AM BEST</td>
+                <td>3523</td>
+                <td>A+</td>
+                <td>Stable</td>
+                <td>####</td>
+              </tr>
+            </table>
+            <div style="background-color: deepskyblue">Ratings</div>
+            <table>
+              <tr style="background-color: darkslategray; color: wheat">
+                <th>Source</th>
+                <th>Range</th>
+                <th>rating</th>
+                <th>Outlook</th>
+                <th>date</th>
+              </tr>
+              <tr>
+                <td>S&P</td>
+                <td>353</td>
+                <td>A+</td>
+                <td>Stable</td>
+                <td>####</td>
+              </tr>
+              <tr>
+                <td>AM BEST</td>
+                <td>3523</td>
+                <td>A+</td>
+                <td>Stable</td>
+                <td>####</td>
+              </tr>
+            </table>
+            <!-- <table>
+          <tr style="background-color: darkslategray; color: wheat;" >
+            <th>Source</th>
+            <th>Range</th>
+            <th>rating</th>
+            <th>Outlook</th>
+            <th>date</th>
           </tr>
-        </thead>
-        <tbody>
           <tr>
-            <td>Data 1</td>
-            <td>Data 2</td>
-            <td>Data 3</td>
+            <td>S&P</td>
+            <td>353/td>
+            <td>A+</td>
+            <td>Stable</td>
+            <td>####</td>
           </tr>
           <tr>
-            <td>Data 4</td>
-            <td>Data 5</td>
-            <td>Data 6</td>
+            <td>AM BEST</td>
+            <td>3523/td>
+            <td>A+</td>
+            <td>Stable</td>
+            <td>####</td>
           </tr>
-        </tbody>
-      </table>
+        </table> -->
+            <table>
+              <tr style="background-color: darkslategray; color: wheat">
+                <th>Source</th>
+                <th>Range</th>
+                <th>rating</th>
+                <th>Outlook</th>
+                <th>date</th>
+              </tr>
+              <tr>
+                <td>S&P</td>
+                <td>353</td>
+                <td>A+</td>
+                <td>Stable</td>
+                <td>####</td>
+              </tr>
+              <tr>
+                <td>AM BEST</td>
+                <td>3523</td>
+                <td>A+</td>
+                <td>Stable</td>
+                <td>####</td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Right Table -->
+          <div class="table-right">
+            <div style="background-color: deepskyblue">Ratings</div>
+            <table>
+              <tr style="background-color: darkslategray; color: wheat">
+                <th>Key Ratios</th>
+                <th>FY 2022</th>
+                <th>FY 2023</th>
+              </tr>
+              <tr>
+                <td>Administrative expense</td>
+                <td>12%</td>
+                <td>10%</td>
+              </tr>
+              <tr>
+                <td>Acquisition expense</td>
+                <td>18%</td>
+                <td>19%</td>
+              </tr>
+            </table>
+            <div style="background-color: deepskyblue">Highlights</div>
+            <div class="edit">{{pdfValues.placeholder2}}</div>
+          </div>
+        </div>
+        <div>Contacts:</div>
+        <div style="text-align: end">Report date: Sept 09, 2024</div>
+      </div>
     </div>
   </div>
-  <div id="chart">
+  <div #chart id="chart">
     <app-pdf-chart></app-pdf-chart>
   </div>
 </div>
-
-
-
-
-

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { PdfService } from '../../../services/pdf.service';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-template1',
@@ -10,18 +10,26 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class Template1Component implements OnInit {
 
   pdf: any;
+  pdfValues = {
+    name: '',
+    placeholder1: '',
+    placeholder2: ''
+  }
 
   constructor(private pdfService: PdfService,
-    public dialogRef: MatDialogRef<Template1Component>
+    public dialogRef: MatDialogRef<Template1Component>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   ngOnInit() {
-    // this.generatePDF();
+    if (this.data) {
+      this.pdfValues = this.data;
+    }
   }
 
   generatePDF(): void {
-    let htmlContent = document.getElementById('pdfView');
-    this.pdfService.createPDF(htmlContent ? htmlContent.innerHTML : '');
+    // let htmlContent = document.getElementById('pdfView');
+    this.pdfService.createPDF();
     // this.pdfService.createPDF(this.htmlContent);
     this.pdf = this.pdfService.getPDF();
   }

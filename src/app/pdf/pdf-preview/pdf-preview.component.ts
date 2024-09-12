@@ -37,7 +37,7 @@ export class PdfPreviewComponent implements OnInit, OnChanges {
         hasBackdrop: false,
         width: '857px',
         height: '800px',
-        position: { right: '350px', left: '350px', top: '-250px'},
+        position: { right: '300px', left: '300px', top: '-250px'},
         data: { name: this.pdfFormValues.name, placeholder1: this.pdfFormValues.placeholder1, placeholder2: this.pdfFormValues.placeholder2 }
       });
     } 
