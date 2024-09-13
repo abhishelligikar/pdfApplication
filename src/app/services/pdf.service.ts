@@ -376,7 +376,7 @@ export class PdfService {
         undefined,
         'FAST'
       );
-      this.addPageHeader('POC - Howdenre - PDF Generation');
+      this.addPageHeader('POC - Howden - PDF Generation');
       this.addSubtitle('PDF Sample View');
       this.addPageFooter();
       return 0;
@@ -405,7 +405,7 @@ export class PdfService {
         undefined,
         'FAST'
       );
-      this.addPageHeader('POC - Howdenre - PDF Generation');
+      this.addPageHeader('POC - Howden - PDF Generation');
       this.addSubtitle('Static Charts');
       this.addPageFooter();
       return 0;
