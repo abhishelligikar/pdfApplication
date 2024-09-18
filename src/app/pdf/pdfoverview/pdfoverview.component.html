@@ -7,6 +7,15 @@
     <form [formGroup]="pdfForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="column form-group">
+          <label for="displaytype">Display Type:</label>
+          <select  class="form-control selectTemplate" id="displaytype" formControlName="displaytype" name="displaytype">
+            <option value="inline">Same Component</option>
+            <option value="popup">Pop Up</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column form-group">
           <label for="name">Company Name:</label>
           <input type="text" class="form-control" id="name" formControlName="name" name="name">
         </div>
@@ -22,7 +31,7 @@
           <input type="text" class="form-control" id="placeholder2" formControlName="placeholder2" name="placeholder2">
         </div>
         <div class="column form-group">
-          <label for="phone">TemplateChoosen:</label>
+          <label for="templateChoosen">TemplateChoosen:</label>
           <select  class="form-control selectTemplate" id="templateChoosen" formControlName="templateChoosen" name="templateChoosen">
             <option value="template1">template1</option>
             <option value="template2">template2</option>
@@ -38,6 +47,8 @@
     <p>Form Data: {{ formValues.placeholder2 }}</p>
     <p>Form Data: {{ formValues.templateChoosen }}</p> -->
   </div>
-<app-pdf-preview [pdfFormValues]="formValues"></app-pdf-preview>
+<app-pdf-preview style="display: block; overflow: auto;"
+  [pdfFormValues]="formValues">
+</app-pdf-preview>
 
 
