@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnChanges, OnInit, Optional, SimpleChanges } from '@angular/core';
 import { PdfService } from '../../../services/pdf.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
@@ -7,23 +7,33 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   templateUrl: './template2.component.html',
   styleUrls: ['./template2.component.css']
 })
-export class Template2Component implements OnInit {
+export class Template2Component implements OnInit, OnChanges {
+  @Input() pdfFormValues: any;
   pdf: any;
   pdfValues = {
+    displaytype: '',
     name: '',
     placeholder1: '',
     placeholder2: ''
   }
 
   constructor(private pdfService: PdfService,
-    public dialogRef: MatDialogRef<Template2Component>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Optional() public dialogRef: MatDialogRef<Template2Component>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
-  ngOnInit() {
-    if (this.data) {
-      this.pdfValues = this.data;
+  ngOnChanges(changes: SimpleChanges): void {
+    this.pdfFormValues = changes; 
+
+    if (this.dialogRef && this.pdfFormValues.pdfFormValues.currentValue.displaytype !== 'inline') {
+      this.dialogRef.close();
     }
+
+    this.pdfValues = this.pdfFormValues.pdfFormValues.currentValue;
+  }
+
+  ngOnInit() {
+    this.pdfValues = this.data ? this.data : this.pdfFormValues.pdfFormValues.currentValue;
   }
 
   generatePDF(): void {

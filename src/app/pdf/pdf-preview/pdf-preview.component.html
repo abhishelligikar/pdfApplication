@@ -1,4 +1,9 @@
-<!-- <div class="container">
-  <button class="btn btn-primary" (click)="generatePdf()">Generate PDF</button>
-  <button class="btn btn-primary" (click)="downloadPdf()">Generate PDF</button>
-</div> -->
+<div *ngIf="pdfFormValues.displaytype === 'inline'" style="width: 857px; height: 823px; border: 2px solid black; overflow: auto;">
+  <div *ngIf="pdfFormValues.templateChoosen === 'template1'">
+    <app-template1 [pdfFormValues]="pdfFormValues"></app-template1>
+  </div>
+  
+  <div *ngIf="pdfFormValues.templateChoosen === 'template2'">
+    <app-template2 [pdfFormValues]="pdfFormValues"></app-template2>
+  </div>
+</div>

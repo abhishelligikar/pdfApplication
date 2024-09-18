@@ -10,6 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class PdfoverviewComponent implements OnInit {
 
   pdfForm = new FormGroup({
+    displaytype: new FormControl("", []),
     name: new FormControl("", []),
     placeholder1: new FormControl("", []),
     placeholder2: new FormControl("", []),
@@ -17,6 +18,7 @@ export class PdfoverviewComponent implements OnInit {
   });
 
   formValues: any = {
+    displaytype: '',
     name: '',
     placeholder1: '',
     placeholder2: '',

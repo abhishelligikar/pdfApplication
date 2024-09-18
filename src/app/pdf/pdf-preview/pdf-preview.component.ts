@@ -18,12 +18,14 @@ export class PdfPreviewComponent implements OnInit, OnChanges {
   constructor(public dialogRef: MatDialog) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.openDialog();
+    if (this.pdfFormValues.templateChoosen !== '' && this.pdfFormValues.displaytype !== 'inline') {
+      this.openDialog();
+    }
   }
 
   ngOnInit() {
     console.log(this.pdfFormValues);
-    if (this.pdfFormValues.templateChoosen !== '') {
+    if (this.pdfFormValues.templateChoosen !== '' && this.pdfFormValues.displaytype !== 'inline') {
       this.openDialog();
     }
     
@@ -38,7 +40,7 @@ export class PdfPreviewComponent implements OnInit, OnChanges {
         width: '857px',
         height: '800px',
         position: { right: '300px', left: '300px', top: '-250px'},
-        data: { name: this.pdfFormValues.name, placeholder1: this.pdfFormValues.placeholder1, placeholder2: this.pdfFormValues.placeholder2 }
+        data: { name: this.pdfFormValues.name, placeholder1: this.pdfFormValues.placeholder1, placeholder2: this.pdfFormValues.placeholder2, displaytype: this.pdfFormValues.displaytype }
       });
     } 
     if (this.pdfFormValues.templateChoosen === 'template2') {
@@ -46,8 +48,8 @@ export class PdfPreviewComponent implements OnInit, OnChanges {
         hasBackdrop: false,
         width: '857px',
         height: '800px',
-        position: { right: '350px', left: '350px', top: '-250px'},
-        data: { name: this.pdfFormValues.name, placeholder1: this.pdfFormValues.placeholder1, placeholder2: this.pdfFormValues.placeholder2 }
+        position: { right: '300px', left: '300px', top: '-250px'},
+        data: { name: this.pdfFormValues.name, placeholder1: this.pdfFormValues.placeholder1, placeholder2: this.pdfFormValues.placeholder2, displaytype: this.pdfFormValues.displaytype }
       });
     } 
 
