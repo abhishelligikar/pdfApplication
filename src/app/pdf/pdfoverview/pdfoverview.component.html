@@ -20,14 +20,20 @@
           <input type="text" class="form-control" id="name" formControlName="name" name="name">
         </div>
         <div class="column form-group">
-          <label for="email" aria-placeholder="text">Placeholder 1:</label>
-          <input type="text" class="form-control" id="placeholder1" formControlName="placeholder1" name="placeholder1">
+          <label for="email" aria-placeholder="text">Time Duration:</label>
+          <!-- <input type="text" class="form-control" id="placeholder1" formControlName="placeholder1" name="placeholder1"> -->
+          <select  class="form-control selectTemplate" id="placeholder1" formControlName="placeholder1" name="placeholder1">
+            <option value="Last Year">Last Year</option>
+            <option value="Last 6 months">Last 6 months</option>
+            <option value="Last 3 months">Last 3 months</option>
+            <option value="Last month">Last month</option>
+          </select>
         </div>
         
       </div>
       <div class="row">
         <div class="column form-group">
-          <label for="phone">Placeholder 2:</label>
+          <label for="phone">Business Text Area:</label>
           <input type="text" class="form-control" id="placeholder2" formControlName="placeholder2" name="placeholder2">
         </div>
         <div class="column form-group">
