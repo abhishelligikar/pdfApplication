@@ -17,7 +17,13 @@
       <div class="row">
         <div class="column form-group">
           <label for="name">Company Name:</label>
-          <input type="text" class="form-control" id="name" formControlName="name" name="name">
+          <!-- <input type="text" class="form-control" id="name" formControlName="name" name="name"> -->
+          <select  class="form-control selectTemplate" id="name" formControlName="name" name="name">
+            <option value="Arch Capital">Arch Capital</option>
+            <option value="Chubb">Chubb</option>
+            <option value="Zenoti">Zenoti</option>
+            <option value="Marken Group">Marken Group</option>
+          </select>
         </div>
         <div class="column form-group">
           <label for="email" aria-placeholder="text">Time Duration:</label>
