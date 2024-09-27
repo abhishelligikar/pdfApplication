@@ -170,3 +170,7 @@
   /* #chart {
     margin-top: 10em;
   } */
+
+  .nw-editor {
+    height: 180px !important;
+  }

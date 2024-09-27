@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { PdfChartComponent } from './pdftemplates/pdf-chart/pdf-chart.component';
+import {NgxWigModule} from 'ngx-wig';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { PdfChartComponent } from './pdftemplates/pdf-chart/pdf-chart.component'
     MatSelectModule,
     MatRadioModule,
     MatCardModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    NgxWigModule 
   ],
   declarations: [PdfComponent, PdfPreviewComponent, PdfoverviewComponent, Template1Component, Template2Component, PdfChartComponent],
   exports: [PdfPreviewComponent, PdfoverviewComponent, Template1Component, Template2Component, PdfChartComponent]
